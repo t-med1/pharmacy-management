@@ -2,7 +2,7 @@
 
 Welcome to the Pharmacy Management System repository! This project is designed to help pharmacies efficiently manage their products, sellers, and overall operations. Whether you are a small independent pharmacy or part of a larger chain, this system provides a robust platform to streamline your day-to-day activities.
 
-![Overview](relative/path/to/image.png)
+![Overview](https://github.com/t-med1/pharmacy-management/blob/main/pharm2.png)
 
 
 ## Features
