@@ -13,11 +13,9 @@ Welcome to the Pharmacy Management System repository! This project is designed t
 - **User-Friendly Interface:** Intuitive design for easy navigation and quick adoption.
 - **Security:** Secure your data with role-based access control.
 
-## Star and Fork the Repository
+## Fork the Repository
 
 If you find the Pharmacy Management System helpful or interesting, consider giving it a star! Your support encourages us to continue developing and maintaining this project.
-
-🌟 Star this repository [here](https://github.com/t-med1/pharmacy-management/)
 
 🍴 Fork this repository to your own GitHub account. By forking the project, you can freely experiment with changes and improvements without affecting the original repository. To fork the project, click the 'Fork' button at the top-right of this page.
 
@@ -25,6 +23,9 @@ After forking, you can clone my repository to your local machine and start makin
 
 `git clone https://github.com/t-med1/pharmacy-management.git`
 
+## Run the Project
+
+- Run the Command : `php artisan serve`
 
 ## Star the Repository
 
