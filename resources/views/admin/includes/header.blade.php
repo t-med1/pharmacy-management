@@ -43,26 +43,34 @@
 				</div>
 				<div class="noti-content">
 					<ul class="notification-list">
-						@foreach (auth()->user()->unReadNotifications as $notification)
+						@forelse (auth()->user()->unReadNotifications as $notification)
 							<li class="notification-message">
-								<a href="{{route('read')}}">
+								<a href="{{ route('read') }}">
 									<div class="media">
+										@if(!empty($notification->data['image']))
 										<span class="avatar avatar-sm">
-											<img class="avatar-img rounded-circle" alt="Product image" src="{{asset('storage/purchases/'.$notification['image'])}}">
+											<img class="avatar-img rounded-circle" alt="Product" src="{{ asset('storage/purchases/'.$notification->data['image']) }}">
 										</span>
+										@else
+										<span class="avatar avatar-sm bg-danger text-white d-flex align-items-center justify-content-center">
+											<i class="fas fa-pills"></i>
+										</span>
+										@endif
 										<div class="media-body">
-											<h6 class="text-danger">Stock Alert</h6>
-											<p class="noti-details">
-												<span class="noti-title">{{$notification->data['product_name']}} is only {{$notification->data['quantity']}} left.</span>
-												<span>Please update the purchase quantity </span>
+											<h6 class="text-danger mb-0">Stock Alert</h6>
+											<p class="noti-details mb-0">
+												<span class="noti-title">{{ $notification->data['product_name'] ?? 'A product' }} has only {{ $notification->data['quantity'] ?? 0 }} units left.</span>
 											</p>
-											
-											<p class="noti-time"><span class="notification-time">{{$notification->created_at->diffForHumans()}}</span></p>
+											<p class="noti-time"><span class="notification-time">{{ $notification->created_at->diffForHumans() }}</span></p>
 										</div>
 									</div>
 								</a>
 							</li>
-						@endforeach						
+						@empty
+							<li class="notification-message text-center p-3 text-muted">
+								<small>No new notifications</small>
+							</li>
+						@endforelse						
 					</ul>
 				</div>
 				<div class="topnav-dropdown-footer">
